@@ -20,11 +20,11 @@
             {% csrf_token %}
             <label for="Name">Enter Name: </label>
             <input id="name_text" type="text" name="name_text" value="{{ name_pronunciation.data.name_text }}"></br></br>
+            <input type="submit" value="Speak"></br></br>
             <label>Audio File: {{ name_pronunciation.data.audio_file }}</label></br></br>
-            <audio controls id="player" autoplay loop>
+            <audio controls id="player" autoplay>
                 <source src="{{ name_pronunciation.data.audio_file }}" type="audio/mp3">
-            </audio></br></br>
-            <input type="submit" value="Speak">
+            </audio>
           </form>
       </div>
    </body>

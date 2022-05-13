@@ -32,7 +32,9 @@ def name_pronunciation(request):
         response = requests.post(url=REST_API_ENDPOINT, data=json.dumps(name_input_data), headers=headers)
         print(response)
         name_pronunciation = response.json()
-        print(name_pronunciation)
+
+        #name_pronunciation = {"status":"success","data":{"id":36,"name_text":"Pari Margu","audio_file":"https://hackathonsg.blob.core.windows.net/hackaudios/output.mp3"}}
+        #print(name_pronunciation)
 
         return render(request, "home.html", {"name_pronunciation": name_pronunciation})
     else:
